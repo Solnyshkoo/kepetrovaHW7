@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		5EAD094027A69C8100833681 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD093F27A69C8100833681 /* AppDelegate.swift */; };
 		5EAD094227A69C8100833681 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD094127A69C8100833681 /* SceneDelegate.swift */; };
-		5EAD094427A69C8100833681 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD094327A69C8100833681 /* ViewController.swift */; };
-		5EAD094727A69C8100833681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EAD094527A69C8100833681 /* Main.storyboard */; };
+		5EAD094427A69C8100833681 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD094327A69C8100833681 /* MapViewController.swift */; };
 		5EAD094927A69C8300833681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EAD094827A69C8300833681 /* Assets.xcassets */; };
 		5EAD094C27A69C8300833681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EAD094A27A69C8300833681 /* LaunchScreen.storyboard */; };
+		5EAD095827A6BEE200833681 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD095727A6BEE200833681 /* CustomButtons.swift */; };
+		5EAD095A27A6D67200833681 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD095927A6D67200833681 /* UIView.swift */; };
+		5EAD095C27A6D71900833681 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD095B27A6D71900833681 /* CustomTextField.swift */; };
+		93AE88D2D052DDB24E15CA6A /* Pods_kepetrovaHW7.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B33660B5F875C8681873AD6 /* Pods_kepetrovaHW7.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5EAD093C27A69C8100833681 /* kepetrovaHW7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kepetrovaHW7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EAD093F27A69C8100833681 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EAD094127A69C8100833681 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5EAD094327A69C8100833681 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5EAD094627A69C8100833681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5EAD094327A69C8100833681 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5EAD094827A69C8300833681 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5EAD094B27A69C8300833681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EAD094D27A69C8300833681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EAD095727A6BEE200833681 /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
+		5EAD095927A6D67200833681 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		5EAD095B27A6D71900833681 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		7A5970C53A65F9A50761F68B /* Pods-kepetrovaHW7.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kepetrovaHW7.debug.xcconfig"; path = "Target Support Files/Pods-kepetrovaHW7/Pods-kepetrovaHW7.debug.xcconfig"; sourceTree = "<group>"; };
+		9B33660B5F875C8681873AD6 /* Pods_kepetrovaHW7.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kepetrovaHW7.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D07619AB78959C12BF0F58AF /* Pods-kepetrovaHW7.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kepetrovaHW7.release.xcconfig"; path = "Target Support Files/Pods-kepetrovaHW7/Pods-kepetrovaHW7.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93AE88D2D052DDB24E15CA6A /* Pods_kepetrovaHW7.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C920ADA6BAD35F2077D4A90 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B33660B5F875C8681873AD6 /* Pods_kepetrovaHW7.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5EAD093327A69C8100833681 = {
 			isa = PBXGroup;
 			children = (
 				5EAD093E27A69C8100833681 /* kepetrovaHW7 */,
 				5EAD093D27A69C8100833681 /* Products */,
+				7B7949BE7AE56C423115E488 /* Pods */,
+				0C920ADA6BAD35F2077D4A90 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +75,58 @@
 		5EAD093E27A69C8100833681 /* kepetrovaHW7 */ = {
 			isa = PBXGroup;
 			children = (
-				5EAD093F27A69C8100833681 /* AppDelegate.swift */,
-				5EAD094127A69C8100833681 /* SceneDelegate.swift */,
-				5EAD094327A69C8100833681 /* ViewController.swift */,
-				5EAD094527A69C8100833681 /* Main.storyboard */,
+				5EAD095627A6B82900833681 /* Common */,
+				5EAD095527A6B80400833681 /* ViewModels */,
+				5EAD095427A6B7E800833681 /* Controllers */,
+				5EAD095327A6B7D900833681 /* Models */,
 				5EAD094827A69C8300833681 /* Assets.xcassets */,
 				5EAD094A27A69C8300833681 /* LaunchScreen.storyboard */,
 				5EAD094D27A69C8300833681 /* Info.plist */,
 			);
 			path = kepetrovaHW7;
+			sourceTree = "<group>";
+		};
+		5EAD095327A6B7D900833681 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5EAD095727A6BEE200833681 /* CustomButtons.swift */,
+				5EAD095B27A6D71900833681 /* CustomTextField.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5EAD095427A6B7E800833681 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5EAD094327A69C8100833681 /* MapViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5EAD095527A6B80400833681 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5EAD095627A6B82900833681 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5EAD093F27A69C8100833681 /* AppDelegate.swift */,
+				5EAD094127A69C8100833681 /* SceneDelegate.swift */,
+				5EAD095927A6D67200833681 /* UIView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7B7949BE7AE56C423115E488 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A5970C53A65F9A50761F68B /* Pods-kepetrovaHW7.debug.xcconfig */,
+				D07619AB78959C12BF0F58AF /* Pods-kepetrovaHW7.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +136,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5EAD095027A69C8300833681 /* Build configuration list for PBXNativeTarget "kepetrovaHW7" */;
 			buildPhases = (
+				0BD2AAEE09661F0FBB51220B /* [CP] Check Pods Manifest.lock */,
 				5EAD093827A69C8100833681 /* Sources */,
 				5EAD093927A69C8100833681 /* Frameworks */,
 				5EAD093A27A69C8100833681 /* Resources */,
+				441C1C1C563ED8BDE8CBAECF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -127,18 +191,62 @@
 			files = (
 				5EAD094C27A69C8300833681 /* LaunchScreen.storyboard in Resources */,
 				5EAD094927A69C8300833681 /* Assets.xcassets in Resources */,
-				5EAD094727A69C8100833681 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BD2AAEE09661F0FBB51220B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kepetrovaHW7-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		441C1C1C563ED8BDE8CBAECF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kepetrovaHW7/Pods-kepetrovaHW7-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kepetrovaHW7/Pods-kepetrovaHW7-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kepetrovaHW7/Pods-kepetrovaHW7-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5EAD093827A69C8100833681 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EAD094427A69C8100833681 /* ViewController.swift in Sources */,
+				5EAD095A27A6D67200833681 /* UIView.swift in Sources */,
+				5EAD095827A6BEE200833681 /* CustomButtons.swift in Sources */,
+				5EAD095C27A6D71900833681 /* CustomTextField.swift in Sources */,
+				5EAD094427A69C8100833681 /* MapViewController.swift in Sources */,
 				5EAD094027A69C8100833681 /* AppDelegate.swift in Sources */,
 				5EAD094227A69C8100833681 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +255,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5EAD094527A69C8100833681 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5EAD094627A69C8100833681 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5EAD094A27A69C8300833681 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -284,6 +384,7 @@
 		};
 		5EAD095127A69C8300833681 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A5970C53A65F9A50761F68B /* Pods-kepetrovaHW7.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -291,9 +392,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = kepetrovaHW7/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to find you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -311,6 +413,7 @@
 		};
 		5EAD095227A69C8300833681 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D07619AB78959C12BF0F58AF /* Pods-kepetrovaHW7.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -318,9 +421,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = kepetrovaHW7/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to find you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
