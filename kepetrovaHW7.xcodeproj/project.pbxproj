@@ -15,6 +15,7 @@
 		5EAD095827A6BEE200833681 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD095727A6BEE200833681 /* CustomButtons.swift */; };
 		5EAD095A27A6D67200833681 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD095927A6D67200833681 /* UIView.swift */; };
 		5EAD095C27A6D71900833681 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD095B27A6D71900833681 /* CustomTextField.swift */; };
+		5EAD097E27A80BF100833681 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD097D27A80BF100833681 /* MapViewModel.swift */; };
 		93AE88D2D052DDB24E15CA6A /* Pods_kepetrovaHW7.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B33660B5F875C8681873AD6 /* Pods_kepetrovaHW7.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		5EAD095727A6BEE200833681 /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
 		5EAD095927A6D67200833681 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		5EAD095B27A6D71900833681 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		5EAD097D27A80BF100833681 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		7A5970C53A65F9A50761F68B /* Pods-kepetrovaHW7.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kepetrovaHW7.debug.xcconfig"; path = "Target Support Files/Pods-kepetrovaHW7/Pods-kepetrovaHW7.debug.xcconfig"; sourceTree = "<group>"; };
 		9B33660B5F875C8681873AD6 /* Pods_kepetrovaHW7.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kepetrovaHW7.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07619AB78959C12BF0F58AF /* Pods-kepetrovaHW7.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kepetrovaHW7.release.xcconfig"; path = "Target Support Files/Pods-kepetrovaHW7/Pods-kepetrovaHW7.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		5EAD095527A6B80400833681 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				5EAD097D27A80BF100833681 /* MapViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				5EAD095827A6BEE200833681 /* CustomButtons.swift in Sources */,
 				5EAD095C27A6D71900833681 /* CustomTextField.swift in Sources */,
 				5EAD094427A69C8100833681 /* MapViewController.swift in Sources */,
+				5EAD097E27A80BF100833681 /* MapViewModel.swift in Sources */,
 				5EAD094027A69C8100833681 /* AppDelegate.swift in Sources */,
 				5EAD094227A69C8100833681 /* SceneDelegate.swift in Sources */,
 			);

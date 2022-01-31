@@ -11,7 +11,7 @@ import UIKit
 class CustomTextField: UITextField {
     init(text: String, frame: CGRect = .zero) {
         super.init(frame: frame)
-        backgroundColor = UIColor.systemGray3
+        backgroundColor = UIColor.systemGray
         textColor = UIColor.black
         placeholder = text
         layer.cornerRadius = 10

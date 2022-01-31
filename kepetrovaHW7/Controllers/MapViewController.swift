@@ -7,14 +7,24 @@
 
 import CoreLocation
 import Foundation
+import MapKit
 import Pods_kepetrovaHW7
 import UIKit
 import YandexMapsMobile
+
+protocol MapViewProtocol: class {
+    func configureMap(point: YMKPoint, zoom: Int)
+    func onRoutesReceived(_ routes: [YMKDrivingRoute])
+    func onRoutesError(_ error: Error)
+    func buildPath(requestPoints: [YMKRequestPoint], responseHandler: @escaping ([YMKDrivingRoute]?, Error?) -> Void)
+    func clean()
+}
 
 final class MapViewController: UIViewController {
     // MARK: - Properties
 
     private let locationManager = CLLocationManager()
+    var mapModel: MapViewModelProtocol?
     private let mapView: YMKMapView = {
         let mapView = YMKMapView()
         mapView.layer.masksToBounds = true
@@ -30,14 +40,15 @@ final class MapViewController: UIViewController {
         return mapView
     }()
 
-    private let buildButton: UIButton = {
+    private let buildButton: CustomButtons = {
         let button = CustomButtons(backColor: .systemBlue, textColor: .white, text: "Build")
+        button.addTarget(self, action: #selector(goButtonWasPressed), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
-    private let clearButton: UIButton = {
-        let button = CustomButtons(backColor: .systemGray, textColor: .white, text: "Clear")
+    private let clearButton: CustomButtons = {
+        let button = CustomButtons(backColor: .systemMint, textColor: .white, text: "Clear")
         button.addTarget(self, action: #selector(clearButtonWasPressed), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -64,9 +75,17 @@ final class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
         setupMapView()
         configureUI()
         setupButtons()
+    }
+
+    func setup() {
+        let viewContr = self
+        let model = MapViewModel()
+        viewContr.mapModel = model
+        model.mapView = viewContr
     }
 
     @objc func clearButtonWasPressed() {
@@ -74,7 +93,31 @@ final class MapViewController: UIViewController {
         endLocation.text = nil
         startLocation.placeholder = "From"
         endLocation.placeholder = "To"
-        mapView.mapWindow.map.mapObjects.clear()
+        clearButton.active(status: false)
+        buildButton.active(status: false)
+        clean()
+    }
+
+    @objc func goButtonWasPressed() {
+        guard
+            let first = startLocation.text,
+            let second = endLocation.text,
+            first != second
+        else {
+            return
+        }
+        mapModel!.build(first: first, second: second)
+    }
+
+    var drivingSession: YMKDrivingSession?
+
+    func buildPath(requestPoints: [YMKRequestPoint], responseHandler: @escaping ([YMKDrivingRoute]?, Error?) -> Void) {
+        let drivingRouter = YMKDirections.sharedInstance().createDrivingRouter()
+        drivingSession = drivingRouter.requestRoutes(
+            with: requestPoints,
+            drivingOptions: YMKDrivingDrivingOptions(),
+            vehicleOptions: YMKDrivingVehicleOptions(),
+            routeHandler: responseHandler)
     }
 
     // MARK: - setupMapView
@@ -108,7 +151,7 @@ final class MapViewController: UIViewController {
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
-            stackView.heightAnchor.constraint(equalToConstant: 50)
+            stackView.heightAnchor.constraint(equalToConstant: 50),
         ])
     }
 
@@ -120,6 +163,55 @@ final class MapViewController: UIViewController {
             textField.delegate = self
             textStack.addArrangedSubview(textField)
         }
+    }
+}
+
+// MARK: - MapViewProtocol
+
+extension MapViewController: MapViewProtocol {
+    func configureMap(point: YMKPoint, zoom: Int) {
+        // view.addSubview(mapView)
+        mapView.frame = view.frame
+        mapView.mapWindow.map.move(
+            with: YMKCameraPosition(target: point, zoom: Float(zoom), azimuth: 0, tilt: 0),
+            animationType: YMKAnimation(type: YMKAnimationType.smooth, duration: 5),
+            cameraCallback: nil)
+    }
+
+    func clean() {
+        mapView.mapWindow.map.mapObjects.clear()
+    }
+
+    func onRoutesReceived(_ routes: [YMKDrivingRoute]) {
+        let mapObjects = mapView.mapWindow.map.mapObjects
+        for route in routes {
+            mapObjects.addPolyline(with: route.geometry)
+        }
+    }
+
+    func onRoutesError(_ error: Error) {
+        let routingError = (error as NSError).userInfo[YRTUnderlyingErrorKey] as! YRTError
+        var errorMessage = "Unknown error"
+        if routingError.isKind(of: YRTNetworkError.self) {
+            errorMessage = "Network error"
+        } else if routingError.isKind(of: YRTRemoteError.self) {
+            errorMessage = "Remote server error"
+        }
+
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+        present(alert, animated: true, completion: nil)
+    }
+}
+
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let render = MKPolylineRenderer(overlay: overlay)
+        render.strokeColor = .blue
+        render.lineWidth = 10
+        print("addd")
+        return render
     }
 }
 
@@ -135,6 +227,22 @@ extension MapViewController: UITextFieldDelegate {
         startLocation.resignFirstResponder()
         endLocation.resignFirstResponder()
         view.endEditing(true)
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let startText = startLocation.text?.replacingOccurrences(of: " ", with: "")
+        let endText = endLocation.text?.replacingOccurrences(of: " ", with: "")
+        if (startText != nil && startText != "") || (endText != nil && endText != "") {
+            clearButton.active(status: true)
+            if startText != nil, startText != "", endText != nil, endText != "" {
+                buildButton.active(status: true)
+            } else {
+                buildButton.active(status: false)
+            }
+        } else {
+            clearButton.active(status: false)
+            buildButton.active(status: false)
+        }
     }
 }
 
